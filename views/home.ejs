@@ -6,7 +6,7 @@
         <p class="text">
             <%= element.text %>
         </p> 
-        <a href="<%=`/posts/${element.title.toLowerCase().replace(/ /g,'-')}` %>">Read More</a>
+        <a href="<%=`/posts?id=${element._id}` %>">Read More</a>
     <% }) %>
 
 <% include partials/footer %> 
