@@ -1,0 +1,24 @@
+<% include partials/header %> 
+    <h1><%= title %> </h1>
+    <p><%= content %> </p>
+    <% posts.forEach(element => { %>
+        <h1><%= element.title %> </h1>
+        <p class="text">
+            <%= element.text %>
+        </p> 
+        <a href="<%=`/posts/${element.title.toLowerCase().replace(/ /g,'-')}` %>">Read More</a>
+    <% }) %>
+
+<% include partials/footer %> 
+
+<script>
+[...document.getElementsByClassName("text")].forEach(element => truncateText(element,100))
+function truncateText(element, maxLength) {
+    truncated = element.innerText;
+    
+    if (truncated.length > maxLength) {
+        truncated = truncated.substr(0,maxLength) + '...';
+    }
+    element.innerText = truncated;
+} 
+</script>
