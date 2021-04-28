@@ -46,14 +46,14 @@ app.get("/", (req, res) => {
       });
   });
 });
-app.get("/about", (req, res) => {
+app.get("/about", (_, res) => {
   res.render("about", { title: "About", content: aboutContent });
 });
-app.get("/contact", (req, res) => {
+app.get("/contact", (_, res) => {
   res.render("contact", { title: "Contact", content: contactContent });
 });
 
-app.get("/compose", (req, res) => {
+app.get("/compose", (_, res) => {
   res.render("compose");
 });
 app.post("/compose", (req, res) => {
